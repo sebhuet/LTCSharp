@@ -13,6 +13,7 @@ namespace VVVV.Nodes.NAudio
 	#endregion PluginInfo
 	public class ListDevicesNode : IPluginEvaluate
 	{
+#pragma warning disable 649
 		[Input("Refresh", IsBang = true, IsSingle = true)]
 		ISpread<bool> FInRefresh;
 
@@ -30,7 +31,7 @@ namespace VVVV.Nodes.NAudio
 
 		[Output("State")]
 		ISpread<string> FOutState;
-
+# pragma warning restore
 		bool firstRun = true;
 
 		public void Evaluate(int SpreadMax)

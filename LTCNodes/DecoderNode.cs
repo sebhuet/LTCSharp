@@ -69,6 +69,7 @@ namespace VVVV.Nodes.LTC
 			}
 		}
 
+#pragma warning disable 649
 		[Input("Device")]
 		IDiffSpread<MMDevice> FInDevice;
 
@@ -86,6 +87,7 @@ namespace VVVV.Nodes.LTC
 
 		[Output("Status")]
 		ISpread<string> FOutStatus;
+        #pragma warning restore
 
 		Spread<DecodeInstance> FInstances = new Spread<DecodeInstance>(0);
 

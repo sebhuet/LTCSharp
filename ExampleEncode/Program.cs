@@ -22,10 +22,10 @@ namespace ExampleEncode
 		{
 			lock (FEncoder)
 			{
-				Console.Write("bip");
+				//Console.Write("bip");
 				FEncoder.encodeFrame();
 				int size = FEncoder.getBuffer(buffer, offset);
-				Console.WriteLine(size);
+				//Console.WriteLine(size);
 				return size;
 			}
 		}
@@ -59,21 +59,33 @@ namespace ExampleEncode
 	{
 		static void Main(string[] args)
 		{
-			var waveOut = new WaveOut();
+            var waveOut = new WaveOut();
+            //var waveOut = new AsioOut();
+
 			var encoder = new Source();
 			waveOut.Init(encoder);
 			waveOut.Play();
 
+            Random rnd = new Random();
+
 			Stopwatch timer = new Stopwatch();
 			timer.Start();
-			while (timer.Elapsed < new TimeSpan(0, 0, 5))
+			while (timer.Elapsed < new TimeSpan(0, 0, 15))
 			{
-				encoder.SetTimecode(new LTCSharp.Timecode(
-					timer.Elapsed.Hours,
-					timer.Elapsed.Minutes,
-					timer.Elapsed.Seconds,
-					(int) ((float)timer.Elapsed.Milliseconds / 1000.0f * 30.0f)));
-				Thread.Sleep(10);
+                Console.WriteLine(" " + timer.Elapsed);
+                encoder.SetTimecode(new LTCSharp.Timecode(
+                    timer.Elapsed.Hours,
+                    timer.Elapsed.Minutes,
+                    timer.Elapsed.Seconds,
+                    ( int )(( float )timer.Elapsed.Milliseconds / 1000.0f * 30.0f)));
+                //Thread.Sleep(10);
+                //encoder.SetTimecode(new LTCSharp.Timecode(
+                //    rnd.Next(0,12),
+                //    rnd.Next(0, 60),
+                //    rnd.Next(0, 60),
+
+                //    ( int )(( float )timer.Elapsed.Milliseconds / 1000.0f * 30.0f)));
+                //Thread.Sleep(10);
 			}
 			timer.Stop();
 
