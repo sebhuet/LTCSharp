@@ -27,7 +27,8 @@ namespace VVVV.Nodes.LTC
 
 				FChannel = (int) channel;
 				FCapture = new WasapiCapture(device);
-				FCapture.WaveFormat = new WaveFormat(44100, 8, (int) channels);
+                //FCapture.WaveFormat = new WaveFormat(44100, 8, (int)channels);
+                FCapture.WaveFormat = new WaveFormat(48000, 16, (int)channels);
 				channels = (uint) FCapture.WaveFormat.Channels;
 
 				if (channel >= channels)
@@ -118,7 +119,7 @@ namespace VVVV.Nodes.LTC
 					catch (Exception e)
 					{
 						FInstances.Add(null);
-						FOutStatus[i] = e.Message;
+						FOutStatus[i] = "errrrrr" + e.Message;
 					}
 				}
 			}

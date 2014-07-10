@@ -39,7 +39,8 @@ namespace ExampleDecode
 		static void WaveInExample()
 		{
 			var waveIn = new WasapiCapture();
-			waveIn.WaveFormat = new WaveFormat(44100, 8, 2);
+            //waveIn.WaveFormat = new WaveFormat(44100, 8, 2);
+            waveIn.WaveFormat = new WaveFormat(48000, 16, 2);
 
 			Console.WriteLine("Device format: " + waveIn.WaveFormat.ToString());
 			FDecoder = new LTCSharp.Decoder(waveIn.WaveFormat.SampleRate, 25, 32);

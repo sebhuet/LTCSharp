@@ -127,6 +127,7 @@ namespace VVVV.Nodes.LTC
                         waveOut.Init(instance);
                         waveOut.Play();
 
+                        firstStart = false;
                         FOutStatus[i] = "OK";
                     }
                     catch (Exception e)
@@ -159,6 +160,7 @@ namespace VVVV.Nodes.LTC
                     else
                     {
                         FWaveOuts[i].Pause();
+                        firstStart = true;
                         FOutStatus[i] = "You have to provide a Timecode";
                     }
                 }

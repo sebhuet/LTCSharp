@@ -48,7 +48,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="VVVV.Core">
-      <HintPath>..\packages\VVVV.Core.31.7.0-develop-137\lib\net40\VVVV.Core.dll</HintPath>
+      <HintPath>..\packages\VVVV.Core.31.7.0-develop-140\lib\net40\VVVV.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VVVV.Hosting">
@@ -58,7 +58,7 @@
       <HintPath>..\packages\VVVV.PluginInterfaces.31.7.0-develop-137\build\net40\lib\x64\VVVV.PluginInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="VVVV.Utils">
-      <HintPath>..\packages\VVVV.Utils.31.7.0-develop-137\lib\net40\VVVV.Utils.dll</HintPath>
+      <HintPath>..\packages\VVVV.Utils.31.7.0-develop-140\lib\net40\VVVV.Utils.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VVVV.Utils3rdParty">

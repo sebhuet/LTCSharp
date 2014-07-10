@@ -70,7 +70,7 @@ namespace ExampleEncode
 
 			Stopwatch timer = new Stopwatch();
 			timer.Start();
-			while (timer.Elapsed < new TimeSpan(0, 0, 15))
+			while (timer.Elapsed < new TimeSpan(0, 2, 15))
 			{
                 Console.WriteLine(" " + timer.Elapsed);
                 encoder.SetTimecode(new LTCSharp.Timecode(
